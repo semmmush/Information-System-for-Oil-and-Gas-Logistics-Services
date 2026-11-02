@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Информационная система нефтегазовой службы логистики. Управление заявками, транспортом и грузами."
+  >
+  <title>Север — нефтегазовая логистика</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#overview">
+      <span class="brand-icon">С</span>
+      <span>
+        СЕВЕР
+        <small>НЕФТЕГАЗОВАЯ ЛОГИСТИКА</small>
+      </span>
+    </a>
+
+    <div class="workspace">
+      <span class="status-dot"></span>
+      Мурманский терминал
+      <span>⌄</span>
+    </div>
+
+    <div class="nav-label">РАБОЧЕЕ ПРОСТРАНСТВО</div>
+
+    <nav aria-label="Основная навигация">
+      <button data-page="overview">
+        <i>◫</i>
+        Обзор
+      </button>
+
+      <button data-page="requests">
+        <i>≡</i>
+        Заявки
+        <span id="nav-count"></span>
+      </button>
+
+      <button data-page="transport">
+        <i>▱</i>
+        Транспорт и флот
+      </button>
+
+      <button data-page="cargo">
+        <i>▦</i>
+        Грузы и МТР
+      </button>
+
+      <button data-page="routes">
+        <i>⌁</i>
+        Маршруты
+      </button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="local-note">
+        <span class="status-dot"></span>
+        Локальное хранение
+        <small>Данные сохраняются в этом браузере</small>
+      </div>
+
+      <div class="profile">
+        <span class="avatar">ЮА</span>
+        <div>
+          Акперов Ю. В.
+          <small>Диспетчер логистики</small>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="shell">
+    <header>
+      <div class="breadcrumb">
+        Рабочее пространство
+        <span>/</span>
+        <b id="crumb">Обзор</b>
+      </div>
+
+      <div class="header-right">
+        <span id="today"></span>
+        <span class="environment">УЧЕБНЫЙ ПРОЕКТ</span>
+      </div>
+    </header>
+
+    <main id="main"></main>
+
+    <footer>
+      <span>
+        Север · Информационная система нефтегазовой службы логистики
+      </span>
+      <span>Версия 1.0 · 2026</span>
+    </footer>
+  </div>
+
+  <dialog id="editor">
+    <form id="edit-form">
+      <div class="dialog-head">
+        <div>
+          <div class="eyebrow">СЕВЕР / ОПЕРАЦИИ</div>
+          <h2 id="dialog-title"></h2>
+        </div>
+
+        <button
+          type="button"
+          class="icon-button"
+          id="close-dialog"
+          aria-label="Закрыть"
+        >
+          ×
+        </button>
+      </div>
+
+      <div id="form-fields" class="form-grid"></div>
+      <p id="form-error" class="error" role="alert"></p>
+
+      <div class="dialog-actions">
+        <button
+          type="button"
+          class="button secondary"
+          id="cancel-dialog"
+        >
+          Отмена
+        </button>
+
+        <button type="submit" class="button primary">
+          Сохранить
+        </button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
